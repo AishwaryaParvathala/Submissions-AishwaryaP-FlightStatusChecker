@@ -1,0 +1,65 @@
+:root{
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --muted: #58616a;
+  --brand: #1f6feb;
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --danger: #dc2626;
+  --neutral: #6b7280;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root { scroll-behavior: smooth; }
+}
+
+body{
+  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(180deg,#f7f9fb, var(--bg));
+  margin:0;padding:28px;color:#0f1724;
+}
+
+.container{max-width:920px;margin:0 auto}
+
+.card{background:var(--card);padding:20px;border-radius:10px;box-shadow:0 6px 18px rgba(15,23,36,0.06);margin-top: 20px;}
+.page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.page-header h1{font-size:20px;margin:0;color:#0b1220}
+.page-sub{color:var(--muted);font-size:13px}
+
+.row{display:flex;gap:14px;align-items:center}
+
+.status-badge{padding:8px 12px;border-radius:999px;color:white;font-weight:700;font-size:13px;display:inline-flex;align-items:center;gap:8px}
+.status-OnTime{background:var(--success)}
+.status-Delayed{background:var(--warning);color:#1f2937}
+.status-Cancelled,.status-Diverted{background:var(--danger)}
+.status-Unknown{background:var(--neutral)}
+
+.mt{margin-top:14px}
+.muted{color:var(--muted)}
+
+.field{display:flex;flex-direction:column}
+.label{font-size:12px;color:var(--muted);margin-bottom:8px}
+.value{font-size:14px}
+
+.input{
+  padding:10px 12px;border-radius:8px;border:1px solid #e6eef8;background:#fbfdff;color:#0b1220;min-height:40px;outline:none;transition:box-shadow .15s, border-color .15s;
+}
+.input:focus{box-shadow:0 6px 18px rgba(31,111,235,0.08);border-color:var(--brand)}
+
+.date-input::-webkit-calendar-picker-indicator{filter:invert(20%) sepia(10%) saturate(600%) hue-rotate(185deg)}
+
+.form-grid{display:flex;gap:12px;align-items:end}
+.btn{padding:10px 14px;border-radius:8px;border:0;background:var(--brand);color:#fff;cursor:pointer;font-weight:600}
+.btn:disabled{opacity:0.6;cursor:not-allowed}
+.btn:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 8px 20px rgba(31,111,235,0.12)}
+
+.error{color:#b91c1c}
+
+.result-meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+.chip{background:#f3f6fb;padding:8px 10px;border-radius:8px;color:#23304a;font-size:13px}
+
+/* Enterprise table-like layout inside card */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.info-item{background:#fbfdff;padding:12px;border-radius:8px;border:1px solid #eef6ff}
+.info-item strong{display:block;color:#10203a;margin-bottom:6px}
+

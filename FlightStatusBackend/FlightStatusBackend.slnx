@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../FlightStatus.Tests/FlightStatus.Tests.csproj" />
+  <Project Path="FlightStatusBackend.csproj" />
+</Solution>

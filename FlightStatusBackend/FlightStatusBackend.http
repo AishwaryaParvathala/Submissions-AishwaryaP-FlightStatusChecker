@@ -1,0 +1,6 @@
+@FlightStatusBackend_HostAddress = http://localhost:5245
+
+GET {{FlightStatusBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
