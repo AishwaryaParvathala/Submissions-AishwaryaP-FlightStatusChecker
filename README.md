@@ -251,40 +251,16 @@ flowchart TD
 - **Normalizer / Rules**: [FlightStatusBackend/Services/StatusNormalizer.cs](FlightStatusBackend/Services/StatusNormalizer.cs)
 - **Stub providers**: [FlightStatusBackend/Providers/AeroTrackStub.cs](FlightStatusBackend/Providers/AeroTrackStub.cs), [FlightStatusBackend/Providers/QuickFlightStub.cs](FlightStatusBackend/Providers/QuickFlightStub.cs)
 
-
-## Tests & CI suggestions
-- Backend: use `dotnet test` in CI; include `--configuration Release` for test builds.
-- Frontend: run `npm test` and include `npm run build` to validate production build.
-
-Example CI steps (high level)
-
-```yaml
-- uses: actions/checkout@v4
-- name: Setup .NET
-	uses: actions/setup-dotnet@v3
-	with: dotnet-version: '8.0.x'
-- name: Setup Node
-	uses: actions/setup-node@v4
-	with: node-version: '18'
-- run: dotnet restore && dotnet build --configuration Release
-- run: dotnet test FlightStatus.Tests
-- run: cd FlightStatusFrontend && npm ci && npm test
-```
-
 ---
 
 ## Troubleshooting & Notes
 - If backend fails to start: confirm `.NET 8` runtime installed and remove stale build artifacts (`bin`, `obj`).
 - If frontend tests fail due to env issues: verify `jest.config.ts` and `src/styles.d.ts` are present and run `npm install`.
 - To change provider behavior, edit `FlightStatusBackend/Providers` and DI registration in `Program.cs`.
-
-## Contact / Further work
-- The repository contains `spec.md` and `IMPLEMENTATION_GUIDE.md` describing mapping rules and test plans. If you'd like, I can generate an `openapi.yaml`, Postman collection, or CI pipeline file.
-
 ---
+## Frontend UI
+<img width="1262" height="711" alt="image" src="https://github.com/user-attachments/assets/e3646b43-2a76-4679-adb1-449b15fbcb11" />
 
-Thank you — if you want, I can now:
-- generate `openapi.yaml` for the backend,
-- produce per-file changelog for the edits mentioned in `prompts.md`, or
-- create a minimal Postman collection for manual verification.
+## Backend Swagger Document
+<img width="933" height="922" alt="image" src="https://github.com/user-attachments/assets/d8ab1c78-d835-46c3-ac42-afb34020fe88" />
 
