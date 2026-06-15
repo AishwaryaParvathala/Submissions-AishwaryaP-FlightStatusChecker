@@ -3,7 +3,7 @@ import SearchForm from "./components/SearchForm";
 import ResultCard from "./components/ResultCard";
 import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
 import type { FlightStatusResult } from "./types/FlightStatus";
-import { API_BASE } from "./services/flightStatusApi";
+import { API_BASE } from "../src/config";
 
 export default function App() {
   const [result, setResult] = useState<FlightStatusResult | null>(null);

@@ -1,4 +1,5 @@
 // Vite dev server proxy to forward API requests to the backend.
+import { API_BASE } from "./src/config";
 const backend = API_BASE;
 
 /** @type {import('vite').UserConfig} */
